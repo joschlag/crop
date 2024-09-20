@@ -6,7 +6,7 @@ on:
 jobs:
     build:
       name: push docker image to docker hub
-      runs-on: ubuntu-18.04
+      runs-on: ubuntu-24.04
       steps:
         - uses: actions/checkout@v2
         - name: login to docker hub
@@ -17,10 +17,10 @@ jobs:
           run: |
             docker login -u $username -p $password 
         - name: build the docker image
-          id: build-docker-image-crop
+          id: build-docker-image
           run: |
             ls -la 
             docker build . -f Dockerfile -t joschlag/crop:1.33
-            - name: push the docker image
-          id: push-docker-image-crop
+        - name: push the docker image
+          id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/crop:1.33
