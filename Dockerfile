@@ -9,6 +9,8 @@ WORKDIR /usr/src
 
 RUN git clone https://github.com/tingchenlab/CROP.git && \
 	cd CROP/ && \
-	make
+	make && \
+	cp crop /usr/local/bin/crop && \
+	chmod +x /usr/local/bin/crop
 
-ENV PATH=${PATH}:/usr/src/CROP
+ENV PATH=${PATH}:/usr/local/bin
