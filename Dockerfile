@@ -11,4 +11,4 @@ RUN git clone https://github.com/tingchenlab/CROP.git && \
 	cd CROP/ && \
 	make
 
-ENV PATH=${PATH}:/usr/src/CROPLinux
+ENV PATH=${PATH}:/usr/src/CROP/CROPLinux
